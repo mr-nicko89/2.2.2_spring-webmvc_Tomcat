@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/first")
 public class HelloController {
 
-	@GetMapping(value = "/")
+	@GetMapping(value = "/hello")
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");
@@ -19,6 +20,10 @@ public class HelloController {
 		messages.add("5.2.0 version by sep'19 ");
 		model.addAttribute("messages", messages);
 		return "index";
+	}
+	@GetMapping(value = "/goodbye")
+	public String pringGoodBay(ModelMap model){
+		return "goodbye";
 	}
 	
 }

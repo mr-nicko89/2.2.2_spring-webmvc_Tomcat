@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Автомобили</title>
+</head>
+<body>
+<div th:each="carsAmount : ${carsAmount}">
+    <p th:text="'Количество машин в списке: ' + ${carsAmount}">VALUE</p>
+</div>
+
+<div th:each="car : ${cars}">
+    <a th:href="@{/cars/{id}(id=${car.getId()})}" th:text="${car.getName()}">car</a>
+</div>
+<!--Вывод таблицей-->
+<div th:each="car : ${cars}">
+    <table rules="all" border="1" width="40%" cols="3">
+        <tr>
+            <td th:text="${car.getId()}" width="4%">carId</td>
+            <td th:text="${car.getName()}" width="48%">carName</td>
+            <td th:text="${car.getNumber()}" width="48%">carNumber</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

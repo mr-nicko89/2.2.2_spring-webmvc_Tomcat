@@ -27,6 +27,6 @@ public class CarsController {
             model.addAttribute("cars", carDAO.index(count));
         }
         model.addAttribute("carsAmount", carDAO.carsAmount());
-        return "cars/index";
+        return "cars/cars";
     }
 }

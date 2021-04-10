@@ -8,10 +8,10 @@
 <div th:each="carsAmount : ${carsAmount}">
     <p th:text="'Количество машин в списке: ' + ${carsAmount}">VALUE</p>
 </div>
-
-<div th:each="car : ${cars}">
-    <a th:href="@{/cars/{id}(id=${car.getId()})}" th:text="${car.getName()}">car</a>
-</div>
+<a href="/cars?count=1">Вывести 1 машину</a>
+<a href="/cars?count=3">Вывести 3 машины</a>
+<a href="/cars?count=10">Вывести 10 машин</a>
+<a href="/cars?count=10">Вывести все машины</a>
 <!--Вывод таблицей-->
 <div th:each="car : ${cars}">
     <table rules="all" border="1" width="40%" cols="3">

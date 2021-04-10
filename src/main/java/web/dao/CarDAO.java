@@ -17,22 +17,19 @@ public class CarDAO {
 
         car = new ArrayList<>();
 
-        car.add(new Car(++CARS_COUNT, "Lamborghini","т777тн78"));
+        car.add(new Car(++CARS_COUNT, "Lamborghini", "т777тн78"));
         car.add(new Car(++CARS_COUNT, "Lada Vesta", "н278нн78"));
         car.add(new Car(++CARS_COUNT, "УАЗ Патриот", "о111ок78"));
-        car.add(new Car(++CARS_COUNT, "BMW","a111aa78"));
-        car.add(new Car(++CARS_COUNT, "Mercedes-Benz","a999aa78"));
+        car.add(new Car(++CARS_COUNT, "BMW", "a111aa78"));
+        car.add(new Car(++CARS_COUNT, "Mercedes-Benz", "a999aa78"));
     }
 
     public List<Car> index() {
         return car;
     }
+
     public List<Car> index(int count) {
         return car.stream().limit(count).collect(Collectors.toList());
-    }
-
-    public Car show(int id) {
-        return car.stream().filter(car -> car.getId() == id).findAny().orElse(null);
     }
 
     public int carsAmount() {
